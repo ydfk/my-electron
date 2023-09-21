@@ -1,0 +1,5 @@
+appId: com.electron.app
+productName: electron-my-app
+win:
+  executableName: electron-my-app
+  icon: icon.png

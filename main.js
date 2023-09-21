@@ -3,10 +3,10 @@
  * @Author: ydfk
  * @Date: 2023-09-20 17:50:26
  * @LastEditors: ydfk
- * @LastEditTime: 2023-09-21 14:40:29
+ * @LastEditTime: 2023-09-21 16:11:23
  */
-const { app, BrowserWindow } = require("electron");
-const { url, proxy, width, height } = require("./config.js");
+const { app, BrowserWindow, nativeTheme } = require("electron");
+const { url, proxy, width, height, theme } = require("./config.js");
 
 console.log("url: ", url);
 
@@ -21,6 +21,10 @@ app.on("ready", () => {
     autoHideMenuBar: true,
     icon: "./icon.png",
   });
+
+  if (theme) {
+    nativeTheme.themeSource = theme;
+  }
 
   mainWindow.loadURL(url);
 });
